@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { wishesAPI } from '../services/api';
 import CountdownTimer from '../components/CountdownTimer';
@@ -44,19 +43,13 @@ const Home = () => {
           <h2 className="text-3xl font-bold text-secondary">
             💫 心愿墙 💫
           </h2>
-          <Link
-            to="/wish-wall"
-            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors"
-          >
-            查看全部
-          </Link>
         </div>
 
         {loading ? (
           <div className="text-center text-gray-400">加载中...</div>
         ) : wishes.length === 0 ? (
           <div className="text-center text-gray-400 py-8">
-            暂无公开心愿，快来抢占沙发！
+            暂无心愿，快来抢占沙发！
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -67,7 +60,9 @@ const Home = () => {
               >
                 <p className="text-gray-200 mb-3">{wish.content}</p>
                 <div className="flex justify-between items-center text-sm text-gray-500">
-                  <span>— {wish.user.username}</span>
+                  <span className="text-secondary font-semibold">
+                    {wish.nickname || '匿名'}
+                  </span>
                   <span>
                     {new Date(wish.createdAt).toLocaleDateString('zh-CN')}
                   </span>

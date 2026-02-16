@@ -22,9 +22,10 @@ model User {
 model Wish {
   id        Int      @id @default(autoincrement())
   content   String
-  isVisible Boolean  @default(false)
-  userId    Int
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  isVisible Boolean  @default(true)
+  userId    Int?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nickname  String?  @default("匿名")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
