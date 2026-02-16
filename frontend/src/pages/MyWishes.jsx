@@ -37,18 +37,6 @@ const MyWishes = () => {
     }
   };
 
-  const getStatusBadge = (isVisible) => {
-    return isVisible ? (
-      <span className="px-3 py-1 bg-green-900 bg-opacity-30 border border-green-600 text-green-400 rounded-full text-sm">
-        已公开
-      </span>
-    ) : (
-      <span className="px-3 py-1 bg-yellow-900 bg-opacity-30 border border-yellow-600 text-yellow-400 rounded-full text-sm">
-        待审核
-      </span>
-    );
-  };
-
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto max-w-4xl">
@@ -70,7 +58,9 @@ const MyWishes = () => {
                 className="p-6 bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-primary transition-all"
               >
                 <div className="flex justify-between items-start mb-4">
-                  {getStatusBadge(wish.isVisible)}
+                  <span className="px-3 py-1 bg-green-900 bg-opacity-30 border border-green-600 text-green-400 rounded-full text-sm">
+                    已公开
+                  </span>
                   <button
                     onClick={() => handleDelete(wish.id)}
                     disabled={deleting === wish.id}

@@ -33,7 +33,7 @@ const WishForm = ({ onWishCreated }) => {
 
     try {
       await wishesAPI.create(content);
-      setSuccess('心愿提交成功！等待管理员审核');
+      setSuccess('心愿提交成功！已公开到心愿墙 ✨');
       setContent('');
       if (onWishCreated) {
         onWishCreated();

@@ -19,6 +19,7 @@ const createWish = async (req, res) => {
       data: {
         content: content.trim(),
         userId: req.user.userId,
+        isVisible: true, // 默认公开
       },
       include: {
         user: {
