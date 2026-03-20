@@ -30,7 +30,7 @@ A beautifully crafted New Year countdown website featuring a wishing wall and a 
 
 ## 📁 Project Structure
 
-├── backend/                  # Backend Service
+`├── backend/                  # Backend Service
 │   ├── src/
 │   │   ├── config/           # Configuration files
 │   │   ├── controllers/      # Route controllers
@@ -48,7 +48,7 @@ A beautifully crafted New Year countdown website featuring a wishing wall and a 
     │   ├── services/         # API integration services
     │   ├── contexts/         # Context API for state management
     │   └── App.jsx
-    └── package.json
+    └── package.json`
 
 ## 🚀 Quick Start
 
